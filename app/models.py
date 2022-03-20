@@ -26,7 +26,7 @@ class Business(models.Model):
     name = models.CharField(max_length=100)
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     neighborhood = models.ForeignKey(Neighborhood, null=True, blank=True, on_delete=models.CASCADE)
-    business_email = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
 
     def __str__(self):
         return str(self.name)
