@@ -112,19 +112,28 @@
 <div class="info-section">
     <div class="posts">
         <p>Post/Alerts</p>
-    <div>
-        <img src="" alt="user-pic">
+        {% for post in posts %}
+    <div class="post">
+        <div class="user">
+            <img class="p-image" src="{{post.user.profile.profile_pic.url}}" alt="user-pic">
+            <span class="u-name">{{post.user.username}}</span>
+            </div>
+         <p class="p-title">{{post.title}}</p>
+        <p class="p-desc">{{post.description}}</p>
+        <p class="p-date">March 12, 2020</p>
+    </div>
+     {% endfor %}
+    </div>
+
+<div class="businesses">
+    <p>Businesses</p>
+    <div class="business">
+        <img src="{{user.profile.profile_pic.url}}" alt="user-pic"><span>{{user.username}}</span>
         <p>jslksajsjldljsdjasdlasljd</p>
         <p>March 12, 2020</p>
 
     </div>
-
-    </div>
-
-    <div class="business">
-
-
-    </div>
+</div>
 
 
 </div>

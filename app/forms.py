@@ -21,35 +21,3 @@ class RegisterForm(UserCreationForm):
         self.fields['password2'].widget.attrs['class'] = 'form-control'
 
 
-class HoodForm(forms.ModelForm):
-    class Meta:
-        model = Neighborhood
-        fields = ['name', "location"]
-
-    def __init__(self, *args, **kwargs):
-        super(HoodForm, self).__init__(*args, **kwargs)
-        self.fields['name'].widget.attrs['class'] = 'form-control'
-        self.fields['location'].widget.attrs['class'] = 'form-control'
-
-
-class BusinessForm(forms.ModelForm):
-    class Meta:
-        model = Business
-        fields = ['name', "neighborhood", "email"]
-
-    def __init__(self, *args, **kwargs):
-        super(BusinessForm, self).__init__(*args, **kwargs)
-        self.fields['name'].widget.attrs['class'] = 'form-control'
-        self.fields['neighborhood'].widget.attrs['class'] = 'form-control'
-        self.fields['email'].widget.attrs['class'] = 'form-control'
-
-
-class PostForm(forms.ModelForm):
-    class Meta:
-        model = Post
-        fields = ['title', "description"]
-
-    def __init__(self, *args, **kwargs):
-        super(PostForm, self).__init__(*args, **kwargs)
-        self.fields['title'].widget.attrs['class'] = 'form-control'
-        self.fields['description'].widget.attrs['class'] = 'form-control'
