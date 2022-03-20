@@ -13,10 +13,10 @@ def index(request):
 
 @login_required(login_url='login-user/')
 def add_post(request):
-    name = request.POST.get('b-name')
-    email = request.POST.get('b-email')
-    business = Business(name=name, user=request.user, neighborhood=request.user.profile.neighborhood, email=email)
-    business.save()
+    name = request.POST.get('title')
+    description = request.POST.get("description")
+    post = Post(title=name, description=description, user=request.user)
+    post.save()
     return render(request, 'html/index.html', {})
 
 

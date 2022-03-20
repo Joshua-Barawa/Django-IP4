@@ -21,19 +21,16 @@
             <form action="/add-post/" method="post">
          {% csrf_token %}
        <div class="form-group">
-          <label for="b-name">Name</label>
-    <input type="text" class="form-control" name="b-name"  id="b-name" autofocus placeholder="Business Name">
-  </div>
+          <label for="title">Title</label>
+         <input type="text" class="form-control" name="title"  id="title" autofocus>
+      </div>
 
-  <div class="form-group">
-    <label for="b-email">Email</label>
-    <input type="email" class="form-control" name="b-email" id="b-email" placeholder="Business Email" required>
-  </div>
+      <div class="form-group">
+        <label for="b-email">Description</label>
+        <textarea type="text" class="form-control" name="description" id="description" required></textarea>
+      </div>
           <button type="submit" class="btn btn-primary">Add</button>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>
