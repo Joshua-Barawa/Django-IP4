@@ -1,6 +1,6 @@
 {% extends 'html/base.html' %}
 {% load static %}
-{% block title %}<title>Awwards|Profile</title>{% endblock %}
+{% block title %}<title>{{profile.user.first_name}}|Profile</title>{% endblock %}
  {% block css %}<link rel="stylesheet" href="{% static 'css/profile.css' %}"> {% endblock %}
 
 {% block content %}
@@ -9,33 +9,26 @@
     <div id="profile" >
         <div class="user-profile">
                 <img src={{profile.profile_pic.url}} alt="pic" />
-                <div id="all-details">
-                <div id="details">
-                <div>
-                <p>Full Name: {{profile.user.first_name}}</p>
-                <a href="#" target="_blank" >Username: {{profile.user.username}}</a>
-                </div>
-                <div>
-                <p>Email: {{profile.user.email}}</p>
-                </div>
-                </div>
-               <p>Bio: {{profile.caption}}</p>
-                </div>
+
+                <p class="f-name">{{profile.user.first_name}}</p>
+
+                <p>{{profile.user.email}}</p>
+
+               <p>{{profile.caption}}</p>
         </div>
 
     <div class="">
 
-       {% for message in messages %}
+
+    <form class="up-form" method="post" enctype="multipart/form-data">
+          {% for message in messages %}
     <div class="alert alert-danger" role="alert">
      {{message}}
      </div>
     {% endfor %}
     <h4 claas="r-header">Update Profile</h4>
-
-    <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-
-    <div class="divide">
+<div class="divide">
   <div class="form-group">
     <label for="username">Username</label>
    <input type="text" class="form-control" name="username"  value="{{profile.user.username}}" id="username" autofocus>
@@ -45,8 +38,7 @@
     <label for="fullname">First Name</label>
    <input type="text" class="form-control" name="fullname" value="{{profile.user.first_name}}" id="fullname">
   </div>
-
-  </div>
+</div>
 
   <div class="form-group">
       <label for="email">Email</label>
@@ -58,43 +50,18 @@
     <input type="file" class="form-control" name="profile_pic"  id="profile_pic" accept="media/*" required="">
   </div>
 
-
      <div class="form-group">
       <label for="bio">Bio</label>
          <textarea type="text" class="form-control" name="bio" value="{{profile.caption}}" id="bio" required=""></textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary">Update</button>
+  <button type="submit" class="up-btn btn btn-primary">Update</button>
 </form>
         </div>
 
         </div>
 
-    <div id="repos">
-
-        {% for project in projects %}
-
-        <div class="user-repo">
-              <a href="/view-project/{{project.id}}">
-            <img src={{project.project_pic.url}} alt="" />
-              </a>
-            <p>{{project.name}}</p>
-               <p>{{project.description}}</p>
-               <div id="other">
-               <p>Rating: {{project.rating}}</p>
-               <p>Comments:{{projects.comments}}</p>
-               </div>
-              <a href="{{project.live_link}}" target="_blank" >Visit Site</a>
-            </div>`
-
-        {% endfor %}
-    </div>
-
-
 </div>
-
-
-
 
 
 </body>
