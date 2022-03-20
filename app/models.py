@@ -10,3 +10,10 @@ class Profile(models.Model):
 
     def __str__(self):
         return str(self.user.username)
+
+
+class Neighbourhood(models.Model):
+    name = models.CharField()
+    location = models.CharField()
+    occupants_count = models.IntegerField(default=0)
+    admin = models.ForeignKey()
