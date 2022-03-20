@@ -1,6 +1,6 @@
 {% extends 'html/base.html' %}
 {% load static %}
-{% block title %}<title>Awwards|Home</title>{% endblock %}
+{% block title %}<title>Hood-Watch|Home</title>{% endblock %}
  {% block css %}<link rel="stylesheet" href="{% static 'css/index.css' %}"> {% endblock %}
 
 {% block content %}
@@ -12,24 +12,26 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Post</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <form method="post">
+        {% csrf_token %}
+        {{form}}
+          </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>
 </div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<a type="button" href="/add-post/" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Add Post
-</button>
+</a>
 
 
 
@@ -38,7 +40,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel2">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel2">Add Business</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -62,7 +64,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel3">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel3">Add Neighborhood</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -72,7 +74,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
       </div>
     </div>
   </div>
