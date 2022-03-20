@@ -1,0 +1,129 @@
+.container{
+padding:20px 0%;
+
+}
+#profile{
+display:flex;
+justify-content:space-between;
+width:70vw;
+padding:20px 20px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+border-radius:10px;
+}
+
+#repos{
+    display: flex;
+    flex-wrap:wrap;
+    padding:5px 0px;
+}
+
+.divide{
+display:flex;
+justify-content:space-between;
+}
+
+
+.user-profile{
+    display: flex;
+    background-color:#07041C;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius:5px;
+    width:660px;
+    margin-top:20px !important;
+    margin-bottom: 20px !important;
+    font-size:16px;
+    text-align: left;
+    color:white;
+    max-height:220px;
+
+}
+
+
+.user-profile img{
+   padding:20px 30px;
+   height: 220px;
+   width:250px;
+   border-radius: 100% 100%;
+}
+
+.user-repo{
+height:400px;
+width:350px;
+}
+
+.user-repo img{
+   width:100%;
+   height: 60% ;
+}
+
+#all-details{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 95%;
+    padding: 20px;
+    padding-right: 50px !important;
+}
+
+#details{
+    display:flex;
+    justify-content: space-between;
+}
+
+
+#location{
+    width:40px;
+    height:30px;
+}
+
+.user-repo{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-top: 10px !important;
+    padding: 10px;
+    border-radius:5px;
+    text-align:left;
+    background-color:#07041C;
+    color:white;
+}
+
+.user-repo:hover{
+   background-color:rgb(54, 54, 87);
+   color: white;
+   transition-duration: 0.3s;
+}
+
+a{
+    color: rgb(23, 124, 170);
+    text-decoration: none;
+}
+
+#other{
+    display: flex;
+}
+
+#other p{
+   padding-right: 15px;
+}
+
+@media only screen and (max-width: 800px){
+    .container{
+        padding:0;
+    }
+    .user-profile{
+        flex-direction: column;
+        padding: 20px;
+        width: 90%;
+        margin: auto;
+        word-wrap: break-word;
+    }
+
+    .user-profile img{
+        height: 100px;
+        width:100px;
+       margin: auto;
+
+     }
+
+
+
+}

@@ -1,0 +1,136 @@
+
+
+.projects{
+display:flex;
+flex-direction:column;
+}
+
+.upper-side{
+height: 90vh;
+text-align:center;
+padding-top:20px;
+position:relative;
+}
+
+.project-pic{
+width:100%;
+height:100%;
+z-index:-1;
+filter: brightness(50%);
+}
+
+.name{
+font-weight:bold;
+font-size:50px;
+color:#fff;
+position:absolute;
+top:40%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index:999;
+}
+
+.user{
+font-size:15px;
+position:absolute;
+top:50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color:white;
+z-index:999;
+}
+
+.link{
+position:absolute;
+top:90%;
+left: 5%;
+transform: translate(-50%, -50%);
+background-color:#40E0D0;
+z-index:999;
+padding:5px 15px;
+color:#fff;
+border-radius:15px;
+font-size:18px;
+text-decoration: none;
+}
+
+.c-field{
+height:100px;
+}
+
+.username{
+font-weight:bold;
+color:#40E0D0;
+font-size:20px;
+
+}
+
+.country, .rating{
+font-weight:bold;
+font-size:20px;
+}
+
+.rate-form{
+width:400px;
+display:block;
+flex:0.5;
+}
+
+.comment-form{
+width:400px;
+display:block;
+flex:0.5;
+}
+
+.c-btn{
+margin-bottom:10px;
+}
+
+.form-section{
+display:flex;
+justify-content:space-between;
+padding:20px 150px;
+}
+
+#comment{
+height:150px;
+}
+
+
+.rate{
+background-color:red;
+font-size:30px;
+padding:35px 50px;
+border-radius:100%;
+margin:7px 20px;
+background-color:transparent;
+border:solid 2px red;
+}
+
+.rating{
+display:flex;
+position:absolute;
+top:60%;
+left: 38%;
+color:white;
+}
+
+
+.rt{
+font-weight:10;
+font-size:17px;
+}
+
+.a-rating{
+font-size:20px;
+font-weight:bold;
+}
+
+.profile-pic{
+width:40px;
+height: 40px;
+}
+
+.c-message{
+padding-left:50px;
+}
