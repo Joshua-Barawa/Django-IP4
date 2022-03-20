@@ -22,6 +22,16 @@ class Profile(models.Model):
         return str(self.user.username)
 
 
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    posted_at = models.DateField(default=datetime.date.today)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.title)
+
+
 class Business(models.Model):
     name = models.CharField(max_length=100)
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
