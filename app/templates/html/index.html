@@ -118,7 +118,6 @@
             <img class="p-image" src="{{post.user.profile.profile_pic.url}}" alt="user-pic">
             <span class="u-name">{{post.user.username}}</span>
             </div>
-         <p class="p-title">{{post.title}}</p>
         <p class="p-desc">{{post.description}}</p>
         <p class="p-date">March 12, 2020</p>
     </div>
@@ -127,12 +126,16 @@
 
 <div class="businesses">
     <p>Businesses</p>
+    {% for business in businesses %}
     <div class="business">
-        <img src="{{user.profile.profile_pic.url}}" alt="user-pic"><span>{{user.username}}</span>
-        <p>jslksajsjldljsdjasdlasljd</p>
-        <p>March 12, 2020</p>
-
+       <div class="user">
+            <img class="p-image" src="{{business.user.profile.profile_pic.url}}" alt="user-pic">
+            <span class="u-name">{{business.user.username}}</span>
+            </div>
+        <p>{{business.name}}</p>
+        <p>{{business.email}}</p>
     </div>
+    {% endfor %}
 </div>
 
 

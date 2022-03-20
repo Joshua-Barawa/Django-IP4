@@ -9,8 +9,8 @@ from .models import *
 @login_required(login_url='login-user/')
 def index(request):
     posts = Post.objects.all()
-
-    return render(request, 'html/index.html', {"posts":posts})
+    businesses = Business.objects.all()
+    return render(request, 'html/index.html', {"posts": posts, "businesses":businesses})
 
 
 @login_required(login_url='login-user/')
