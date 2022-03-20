@@ -17,25 +17,25 @@ def add_post(request):
     description = request.POST.get("description")
     post = Post(title=name, description=description, user=request.user)
     post.save()
-    return render(request, 'html/index.html', {})
+    return redirect('index-page')
 
 
 @login_required(login_url='login-user/')
-def add_business(request):
+def create_business(request):
     name = request.POST.get('b-name')
     email = request.POST.get('b-email')
     business = Business(name=name, user=request.user, neighborhood=request.user.profile.neighborhood, email=email)
     business.save()
-    return render(request, 'html/index.html', {})
+    return redirect('index-page')
 
 
 @login_required(login_url='login-user/')
-def add_hood(request):
+def create_neigborhood(request):
     name = request.POST.get('name')
     location = request.POST.get('location')
-    business = Business(name=name, user=request.user, neighborhood=request.user.profile.neighborhood, email=email)
-    business.save()
-    return render(request, 'html/index.html', {})
+    hood = Neighborhood(name=name, location=location, admin=request.user)
+    hood.save()
+    return redirect('index-page')
 
 
 @login_required(login_url='login-user/')
