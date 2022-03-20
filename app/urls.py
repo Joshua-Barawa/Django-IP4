@@ -7,6 +7,7 @@ urlpatterns = [
     path('login-user/', login_user, name='login-user'),
     path('logout-user/', logout_user, name='logout-user'),
     path('add-post/', add_post, name='add-post'),
+    path('add-business/', add_business, name='add-business'),
     # path('view-project/<int:id>', view_project, name='view-project'),
     path('profile/', my_profile, name='profile'),
     # path('project-list/', project_list, name='project-list'),

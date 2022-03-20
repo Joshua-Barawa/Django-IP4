@@ -13,19 +13,20 @@ def index(request):
 
 @login_required(login_url='login-user/')
 def add_post(request):
-    if request.method == 'POST':
-        form = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.user = request.user
-            post.save()
-            messages.success(request, "Posted successful")
-            return redirect('index-page')
-    else:
-        form = PostForm()
-        return render(request, 'html/index.html', {'form': form})
+    name = request.POST.get('b-name')
+    email = request.POST.get('b-email')
+    business = Business(name=name, user=request.user, neighborhood=request.user.profile.neighborhood, email=email)
+    business.save()
+    return render(request, 'html/index.html', {})
 
-    return render(request, 'html/index.html', {'form': form})
+
+@login_required(login_url='login-user/')
+def add_business(request):
+    name = request.POST.get('b-name')
+    email = request.POST.get('b-email')
+    business = Business(name=name, user=request.user, neighborhood=request.user.profile.neighborhood, email=email)
+    business.save()
+    return render(request, 'html/index.html', {})
 
 
 @login_required(login_url='login-user/')
