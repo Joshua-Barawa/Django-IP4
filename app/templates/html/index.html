@@ -86,8 +86,19 @@
         </button>
       </div>
       <div class="modal-body">
-        {% csrf_token %}
-        {{form}}
+        <form action="/add-hood/" method="post">
+         {% csrf_token %}
+       <div class="form-group">
+          <label for="b-name">Name</label>
+    <input type="text" class="form-control" name="name"  id="name" autofocus placeholder="Business Name">
+  </div>
+
+  <div class="form-group">
+    <label for="b-email">Location</label>
+    <input type="text" class="form-control" name="location" id="location" placeholder="Business Email" required>
+  </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

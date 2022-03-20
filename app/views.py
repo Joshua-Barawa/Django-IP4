@@ -30,6 +30,15 @@ def add_business(request):
 
 
 @login_required(login_url='login-user/')
+def add_hood(request):
+    name = request.POST.get('name')
+    location = request.POST.get('location')
+    business = Business(name=name, user=request.user, neighborhood=request.user.profile.neighborhood, email=email)
+    business.save()
+    return render(request, 'html/index.html', {})
+
+
+@login_required(login_url='login-user/')
 def my_profile(request):
     user = request.user
     profile = Profile.objects.get(user=user)
