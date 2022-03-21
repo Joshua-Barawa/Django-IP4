@@ -8,11 +8,10 @@ from .models import *
 
 @login_required(login_url='login-user/')
 def index(request):
-    user = request.user
-    profile = Profile.objects.get(user=user)
+
     posts = Post.objects.all()
     businesses = Business.objects.all()
-    contacts = Contacts.objects.filter(hood=profile.neighborhood)
+    contacts = Contacts.objects.all()
     find_business(request)
     return render(request, 'html/index.html', {"posts": posts, "businesses":businesses, "contacts":contacts})
 
@@ -91,12 +90,14 @@ def my_profile(request):
     profile = Profile.objects.get(user=user)
     businesses = Business.objects.filter(user=user)
     hoods = Neighborhood.objects.filter(admin=user)
+
     if request.method == "POST":
         username = request.POST.get('username')
         fullname = request.POST.get('fullname')
         email = request.POST.get('email')
         profile.profile_pic = request.FILES['profile_pic']
         profile.caption = request.POST.get("bio")
+        profile.neighborhood = request.POST.get('n-hood')
 
         user = User.objects.filter(username=user.username).update(username=username, first_name=fullname, email=email)
         profile.save()

@@ -48,6 +48,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 {% if user.is_authenticated %}
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
         <li>
@@ -60,6 +61,9 @@
     </ul>
    <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
+
     {{ request.user.username }}
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
