@@ -47,12 +47,12 @@ def create_neigborhood(request):
 @login_required(login_url='login-user/')
 def delete_business(request, id):
     Business.objects.get(id=id).delete()
-    return redirect('index-page')
+    return redirect('profile')
 
 
 @login_required(login_url='login-user/')
 def delete_neighborhood(request, id):
-    Business.objects.get(id=id).delete()
+    Neighborhood.objects.get(id=id).delete()
     return redirect('profile')
 
 
