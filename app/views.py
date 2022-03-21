@@ -36,6 +36,7 @@ def delete_business(request, id):
     Business.objects.get(id=id).delete()
     return redirect('index-page')
 
+
 @login_required(login_url='login-user/')
 def find_business(request, id):
     if request.method == "POST":
@@ -83,6 +84,7 @@ def update_neighborhood(request, id):
 def my_profile(request):
     user = request.user
     profile = Profile.objects.get(user=user)
+    businesses = Business.objects.filter(user=user)
     if request.method == "POST":
         username = request.POST.get('username')
         fullname = request.POST.get('fullname')
@@ -92,7 +94,7 @@ def my_profile(request):
 
         user = User.objects.filter(username=user.username).update(username=username, first_name=fullname, email=email)
         profile.save()
-    return render(request, 'html/profile.html', {"profile": profile})
+    return render(request, 'html/profile.html', {"profile": profile, 'businesses':businesses})
 
 
 def register_user(request):

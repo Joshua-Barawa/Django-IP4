@@ -57,9 +57,30 @@
 
   <button type="submit" class="up-btn btn btn-primary">Update</button>
 </form>
-        </div>
+    </div>
+    </div>
 
-        </div>
+<table class="table"><h4>My Businesses</h4>
+  <thead>
+    <tr>
+        <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for business in businesses %}
+    <tr>
+      <td>{{business.id}}</td>
+      <td>{{business.name}}</td>
+      <td>{{business.email}}</td>
+      <td><button>Update</button></td>
+        <td><button>Delete</button></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
 
 </div>
 
