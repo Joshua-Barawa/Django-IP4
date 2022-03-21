@@ -8,10 +8,13 @@ from .models import *
 
 @login_required(login_url='login-user/')
 def index(request):
+    user = request.user
+    profile = Profile.objects.get(user=user)
     posts = Post.objects.all()
     businesses = Business.objects.all()
+    contacts = Contacts.objects.filter(hood=profile.neighborhood)
     find_business(request)
-    return render(request, 'html/index.html', {"posts": posts, "businesses":businesses})
+    return render(request, 'html/index.html', {"posts": posts, "businesses":businesses, "contacts":contacts})
 
 
 @login_required(login_url='login-user/')

@@ -35,9 +35,9 @@
     </div>
   </div>
 </div>
-<a href="/add-post/" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button href="/add-post/" class="btn btn-primary a-btn" data-toggle="modal" data-target="#exampleModal">
   Add Post
-</a>
+</button>
 
 
 
@@ -70,7 +70,7 @@
     </div>
   </div>
 </div>
-<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Add Business</button>
+<button class="btn btn-primary a-btn" data-toggle="modal" data-target="#exampleModal2">Add Business</button>
 
 
 
@@ -103,7 +103,7 @@
     </div>
   </div>
 </div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+<button type="button" class="btn btn-primary a-btn" data-toggle="modal" data-target="#exampleModal3">
   Add Neighborhood
 </button>
 
@@ -136,6 +136,20 @@
             </div>
         <p>{{business.name}}</p>
         <p>{{business.email}}</p>
+    </div>
+    {% endfor %}
+</div>
+
+    <div class="contacts">
+    <h3 class="h-h">Contacts</h3>
+    {% for contact in contacts %}
+    <div class="business">
+       <div class="user">
+            <img class="p-image" src="{{business.user.profile.profile_pic.url}}" alt="user-pic">
+            <span class="u-name">{{contact.name}}</span>
+            </div>
+        <p>{{contact.unit}}</p>
+        <p>{{contact.m_number}}</p>
     </div>
     {% endfor %}
 </div>

@@ -17,6 +17,7 @@ class Contacts(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
     unit = models.CharField(max_length=100, blank=True, null=True)
     m_number = models.IntegerField(default=0)
+    hood = models.ForeignKey(Neighborhood, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.name)
