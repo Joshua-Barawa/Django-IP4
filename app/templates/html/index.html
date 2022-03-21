@@ -4,8 +4,11 @@
  {% block css %}<link rel="stylesheet" href="{% static 'css/index.css' %}"> {% endblock %}
 
 {% block content %}
-
-
+<div class="b-section">
+<button href="/add-post/" class="btn btn-primary a-btn" data-toggle="modal" data-target="#exampleModal"> Add Post</button>
+<button class="btn btn-primary a-btn" data-toggle="modal" data-target="#exampleModal2">Add Business</button>
+<button type="button" class="btn btn-primary a-btn" data-toggle="modal" data-target="#exampleModal3"> Add Neighborhood</button>
+</div>
 
 <!--START OF ADD POST-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -35,9 +38,7 @@
     </div>
   </div>
 </div>
-<button href="/add-post/" class="btn btn-primary a-btn" data-toggle="modal" data-target="#exampleModal">
-  Add Post
-</button>
+
 
 
 
@@ -70,7 +71,7 @@
     </div>
   </div>
 </div>
-<button class="btn btn-primary a-btn" data-toggle="modal" data-target="#exampleModal2">Add Business</button>
+
 
 
 
@@ -103,9 +104,7 @@
     </div>
   </div>
 </div>
-<button type="button" class="btn btn-primary a-btn" data-toggle="modal" data-target="#exampleModal3">
-  Add Neighborhood
-</button>
+
 
 <!--END OF ADD MODALS-->
 
