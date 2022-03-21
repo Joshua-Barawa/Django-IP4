@@ -32,12 +32,51 @@ def create_business(request):
 
 
 @login_required(login_url='login-user/')
+def delete_business(request, id):
+    Business.objects.get(id=id).delete()
+    return redirect('index-page')
+
+@login_required(login_url='login-user/')
+def find_business(request, id):
+    if request.method == "POST":
+        search = request.POST["search"]
+        businesses = Business.objects.filter(name__contains=id)
+        return render(request, "html/index.html", {"search": search, "businesses": businesses})
+    return render(request, "html/index.html", {})
+
+
+@login_required(login_url='login-user/')
+def update_business(request):
+    return redirect('index-page')
+
+
+@login_required(login_url='login-user/')
 def create_neigborhood(request):
     name = request.POST.get('name')
     location = request.POST.get('location')
     hood = Neighborhood(name=name, location=location, admin=request.user)
     hood.save()
     return redirect('index-page')
+
+
+@login_required(login_url='login-user/')
+def delete_neighborhood(request, id):
+    Neighborhood.objects.get(id=id).delete()
+    return redirect('index-page')
+
+
+@login_required(login_url='/login-user')
+def find_neigborhood(request, id):
+    if request.method == "POST":
+        search = request.POST["search"]
+        hoods = Neighborhood.objects.filter(name__contains=id)
+        return render(request, "html/index.html", {"search": search, "hoods": hoods})
+    return render(request, "html/index.html", {})
+
+
+@login_required(login_url='/login-user')
+def update_neighborhood(request, id):
+    return render(request, "html/index.html", {})
 
 
 @login_required(login_url='login-user/')
