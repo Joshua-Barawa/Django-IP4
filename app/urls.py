@@ -9,6 +9,7 @@ urlpatterns = [
     path('add-post/', add_post, name='add-post'),
     path('add-business/', create_business, name='add-business'),
     path('add-hood/', create_neigborhood, name='add-hood'),
+    path('delete-business/<int:id>', delete_business, name='delete-business'),
     path('delete-hood/<int:id>', delete_neighborhood, name='delete-hood'),
     # path('view-project/<int:id>', view_project, name='view-project'),
     path('profile/', my_profile, name='profile'),

@@ -32,9 +32,24 @@ def create_business(request):
 
 
 @login_required(login_url='login-user/')
+def create_neigborhood(request):
+    name = request.POST.get('name')
+    location = request.POST.get('location')
+    hood = Neighborhood(name=name, location=location, admin=request.user)
+    hood.save()
+    return redirect('index-page')
+
+
+@login_required(login_url='login-user/')
 def delete_business(request, id):
     Business.objects.get(id=id).delete()
     return redirect('index-page')
+
+
+@login_required(login_url='login-user/')
+def delete_neighborhood(request, id):
+    Business.objects.get(id=id).delete()
+    return redirect('profile')
 
 
 @login_required(login_url='login-user/')
@@ -51,19 +66,9 @@ def update_business(request):
     return redirect('index-page')
 
 
-@login_required(login_url='login-user/')
-def create_neigborhood(request):
-    name = request.POST.get('name')
-    location = request.POST.get('location')
-    hood = Neighborhood(name=name, location=location, admin=request.user)
-    hood.save()
-    return redirect('index-page')
 
 
-@login_required(login_url='login-user/')
-def delete_neighborhood(request, id):
-    Neighborhood.objects.get(id=id).delete()
-    return redirect('index-page')
+
 
 
 @login_required(login_url='/login-user')
@@ -85,6 +90,7 @@ def my_profile(request):
     user = request.user
     profile = Profile.objects.get(user=user)
     businesses = Business.objects.filter(user=user)
+    hoods = Neighborhood.objects.filter(admin=user)
     if request.method == "POST":
         username = request.POST.get('username')
         fullname = request.POST.get('fullname')
@@ -94,7 +100,7 @@ def my_profile(request):
 
         user = User.objects.filter(username=user.username).update(username=username, first_name=fullname, email=email)
         profile.save()
-    return render(request, 'html/profile.html', {"profile": profile, 'businesses':businesses})
+    return render(request, 'html/profile.html', {"profile": profile, 'businesses': businesses, "hoods": hoods})
 
 
 def register_user(request):

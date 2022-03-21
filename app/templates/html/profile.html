@@ -74,8 +74,31 @@
       <td>{{business.id}}</td>
       <td>{{business.name}}</td>
       <td>{{business.email}}</td>
-      <td><button>Update</button></td>
-        <td><button>Delete</button></td>
+      <td><button class="btn btn-primary">Update</button></td>
+        <td><a href="/delete-business/{{business.id}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+
+    <table class="table"><h4>My Hoods</h4>
+  <thead>
+    <tr>
+        <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for hood in hoods %}
+    <tr>
+      <td>{{hood.id}}</td>
+      <td>{{hood.name}}</td>
+      <td>{{hood.location}}</td>
+        <td>{{hood.occupants_count}}</td>
+      <td><a href="" class="btn btn-primary">Update</a></td>
+        <td><a href="/delete-hood/{{hood.id}}" class="btn btn-danger">Delete</a></td>
     </tr>
   {% endfor %}
   </tbody>
