@@ -13,6 +13,15 @@ class Neighborhood(models.Model):
         return str(self.name)
 
 
+class Contacts(models.Model):
+    name = models.CharField(max_length=100, blank=True, null=True)
+    unit = models.CharField(max_length=100, blank=True, null=True)
+    m_number = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.name)
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User, blank=True, null=True, on_delete=models.CASCADE)
     profile_pic = models.ImageField(default='media/default2.png', upload_to='media/', null=True, blank=True)
