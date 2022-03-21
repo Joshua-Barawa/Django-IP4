@@ -10,6 +10,7 @@ from .models import *
 def index(request):
     posts = Post.objects.all()
     businesses = Business.objects.all()
+    find_business(request)
     return render(request, 'html/index.html', {"posts": posts, "businesses":businesses})
 
 
@@ -53,22 +54,13 @@ def delete_neighborhood(request, id):
 
 
 @login_required(login_url='login-user/')
-def find_business(request, id):
+def find_business(request):
     if request.method == "POST":
         search = request.POST["search"]
-        businesses = Business.objects.filter(name__contains=id)
+        businesses = Business.objects.filter(name__contains=search)
+        print(search)
         return render(request, "html/index.html", {"search": search, "businesses": businesses})
     return render(request, "html/index.html", {})
-
-
-@login_required(login_url='login-user/')
-def update_business(request):
-    return redirect('index-page')
-
-
-
-
-
 
 
 @login_required(login_url='/login-user')
@@ -78,6 +70,11 @@ def find_neigborhood(request, id):
         hoods = Neighborhood.objects.filter(name__contains=id)
         return render(request, "html/index.html", {"search": search, "hoods": hoods})
     return render(request, "html/index.html", {})
+
+
+@login_required(login_url='login-user/')
+def update_business(request):
+    return redirect('index-page')
 
 
 @login_required(login_url='/login-user')
