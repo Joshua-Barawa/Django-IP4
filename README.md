@@ -14,29 +14,26 @@ The following technologies have been used on this project:
 * Django
 * Python
 
-Setup / Installation
+## Setup / Installation
 clone the repo:
-git clone https://github.com/Joshua-Barawa/Django-IP4.git
-cd neighborhood
-create virtual environment
-python3.8 -m venv --without-pip venv
+** git clone https://github.com/Joshua-Barawa/Django-IP4.git
+** cd neighborhood
+** create virtual environment
+** python3 -m venv venv
 To activate the virtual environment
-source venv/bin/activate
+** source venv/bin/activate
 install the packages from requirements.txt
-pip install -r requirements.txt
-setup environment variables
-cp .env.example .env
-Start the server
-python3.8 manage.py runserver
-open the browser and navigate to http://127.0.0.1:8000/ to see the application in action
+** pip install -r requirements.txt
+** setup environment variables
+** cp .env.example .env
+** Start the server
+** python3.8 manage.py runserver
+** open the browser and navigate to http://127.0.0.1:8000/ to see the application in action
 
-Live link
-link to the live site
-
-Contact details
+## Contact details
 Email: joshua.barawa@student.moringaschool.com
 
-MIT licence
+## MIT licence
 Copyright (c) 2022 Moringa School
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
