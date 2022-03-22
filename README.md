@@ -1,18 +1,18 @@
-Neighbourhood
+## Neighbourhood
 created by Joshua Barawa on 15/03/2022
 
-Description
+## Description
 Neighborhood is a web application that allows users to know the where abouts of their Hood
 
-Technologies Used
+## Technologies Used
 The following technologies have been used on this project:
 
-HTML
-CSS
-JS
-Bootstrap
-Django
-Python
+* HTML
+* CSS
+* JS
+* Bootstrap
+* Django
+* Python
 
 Setup / Installation
 clone the repo:
