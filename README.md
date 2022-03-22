@@ -16,19 +16,19 @@ The following technologies have been used on this project:
 
 ## Setup / Installation
 clone the repo:
-** git clone https://github.com/Joshua-Barawa/Django-IP4.git
-** cd neighborhood
-** create virtual environment
-** python3 -m venv venv
+* git clone https://github.com/Joshua-Barawa/Django-IP4.git
+* cd neighborhood
+* create virtual environment
+* python3 -m venv venv
 To activate the virtual environment
-** source venv/bin/activate
+* source venv/bin/activate
 install the packages from requirements.txt
-** pip install -r requirements.txt
-** setup environment variables
-** cp .env.example .env
-** Start the server
-** python3.8 manage.py runserver
-** open the browser and navigate to http://127.0.0.1:8000/ to see the application in action
+* pip install -r requirements.txt
+* setup environment variables
+* cp .env.example .env
+* Start the server
+* python3.8 manage.py runserver
+* open the browser and navigate to http://127.0.0.1:8000/ to see the application in action
 
 ## Contact details
 Email: joshua.barawa@student.moringaschool.com
